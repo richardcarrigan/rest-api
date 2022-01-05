@@ -2,6 +2,13 @@ const express = require('express');
 const userRouter = express.Router();
 const { v4: uuidv4 } = require('uuid');
 
+/**
+ * @openapi
+ * tags:
+ *  - name: users
+ *    description: Perform CRUD operations on user profiles
+ */
+
 let users = [
   { id: uuidv4(), firstName: 'Richard', lastName: 'Carrigan' },
   { id: uuidv4(), firstName: 'John', lastName: 'Doe' },
@@ -13,6 +20,8 @@ let users = [
  * /users:
  *  get:
  *    summary: Get a list of users
+ *    tags:
+ *      - users
  *    responses:
  *      '200':
  *        description: A JSON array of user names
@@ -39,6 +48,8 @@ userRouter.get('/', (req, res) => {
  * /users:
  *  post:
  *    summary: Create a new user
+ *    tags:
+ *      - users
  *    requestBody:
  *      required: true
  *      content:
@@ -89,6 +100,8 @@ userRouter.post('/', (req, res) => {
  * /users/{id}:
  *  put:
  *    summary: Update a specific user
+ *    tags:
+ *      - users
  *    parameters:
  *      - in: path
  *        name: id
@@ -145,6 +158,8 @@ userRouter.put('/:id', (req, res) => {
  * /users/{id}:
  *  delete:
  *    summary: Delete a specific user
+ *    tags:
+ *      - users
  *    parameters:
  *      - in: path
  *        name: id
