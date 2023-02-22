@@ -14,7 +14,7 @@
   "dependencies": {
     "express": "^4.17.3",
     "swagger-jsdoc": "^6.1.0",
-    "swagger-ui-express": "^4.3.0"
+    "swagger-ui-express": "^4.6.0"
   },
   "devDependencies": {
     "eslint": "^8.11.0",
